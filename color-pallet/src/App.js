@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React from 'react';
 import Pallete from './pallet'
 import seedsColors from './SeedsColors';
 
