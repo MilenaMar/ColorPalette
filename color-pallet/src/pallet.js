@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ColorBox from './colorBox.js'
+import './pallet.css'
 
 class Pallete extends Component {
   render () {
@@ -10,10 +11,7 @@ class Pallete extends Component {
       return (
           <div className='palette'>
           {/* Navbar will go here */}
-          <div className='palette-colors'>
-          <h1>{colorBoxes}</h1>
-          {colorBoxes}
-          </div>
+          <div className='palette-colors'>{colorBoxes}</div>
           {/* Footer Will go here */}
           </div>
       )
