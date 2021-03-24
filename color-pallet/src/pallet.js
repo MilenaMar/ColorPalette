@@ -27,7 +27,7 @@ class Pallete extends Component {
      ) )
       return (
           <div className='palette'>
-          <NavBar level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat}/>
+          <NavBar level={level} changeLevel={this.changeLevel} handleFormatChange={this.changeFormat}/>
           <div className='palette-colors'>{colorBoxes}</div>
           {/* Footer Will go here */}
           </div>
