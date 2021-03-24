@@ -8,21 +8,26 @@ import './pallet.css'
 class Pallete extends Component {
   state = {
     level:400,
+    format:'hex'
   }
 
   changeLevel = (level) => {
   this.setState({level})
   }
 
+  changeFormat = (value) => {
+    this.setState({format:value})
+  }
+
   render () {
     const {colors} = this.props.pallete
-    const {level} = this.state
+    const {level, format} = this.state
     const colorBoxes = colors[level].map(color => (
-      <ColorBox background={color.hex} name={color.name} key={color.hex}/>
+      <ColorBox background={color[format]} name={color.name} key={color.hex}/>
      ) )
       return (
           <div className='palette'>
-          <NavBar level={level} changeLevel={this.changeLevel}/>
+          <NavBar level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat}/>
           <div className='palette-colors'>{colorBoxes}</div>
           {/* Footer Will go here */}
           </div>
