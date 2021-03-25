@@ -1,14 +1,19 @@
-import React from 'react';
-import Pallete from './pallet'
-import seedsColors from './SeedsColors';
-import {generatePalette} from './colorHelpers'
-
+import React from "react";
+import Palette from "./palette";
+import { Route, Switch } from "react-router-dom";
+import seedsColors from "./SeedsColors";
+import { generatePalette } from "./colorHelpers";
 
 function App() {
   return (
-    <div className="App">
-     <Pallete pallete={generatePalette(seedsColors[4])}/>
-    </div>
+    <Switch>
+      <Route exact path="/" render={()=> <h1>Pallet list goes here</h1>} />
+      <Route exact path="/palette/:id" render={()=> <h1>individual pallete</h1>} />
+    </Switch>
+
+    //<div className="App">
+    //<Palette pallete={generatePalette(seedsColors[4])}/>
+    //</div>
   );
 }
 
