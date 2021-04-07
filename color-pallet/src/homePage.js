@@ -19,21 +19,24 @@ const styles = {
     flexWrap: "wrap",
   },
   nav: {
-      display:'flex',
-      width:'100%',
-      justifyContent:'space-between',
-      color:'white'
+    display: "flex",
+    width: "100%",
+    justifyContent: "space-between",
+    color: "white",
   },
   palettes: {
-      boxSizing:'border-box',
-      width:'100%',
-      display:'grid',
-      gridTemplateColumns:'repeat(3,30%)',
-      gridGap:'5%'
+    boxSizing: "border-box",
+    width: "100%",
+    display: "grid",
+    gridTemplateColumns: "repeat(3,30%)",
+    gridGap: "5%",
   },
 };
 
 class HomePage extends Component {
+  goToPallette (id){
+    this.props.history.push(`/palette/${id}`)
+  }
   render() {
     const { palettes, classes } = this.props;
     return (
@@ -44,9 +47,7 @@ class HomePage extends Component {
           </nav>
           <div className={classes.palettes}>
             {palettes.map((palette) => (
-              <div key = {palette.id} >
-                <MiniPalette {...palette} />
-              </div>
+              <MiniPalette {...palette} key={palette.id} handleClick={()=>this.goToPallette (palette.id)} />
             ))}
           </div>
         </div>
