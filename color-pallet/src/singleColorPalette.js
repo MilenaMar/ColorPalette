@@ -3,7 +3,6 @@ import ColorBox from './colorBox.js'
 
 
 export default class SingleColorPalette extends Component{
-
     state = {
      shades: this.gatherShades(this.props.palette, this.props.colorId)
     }
@@ -20,10 +19,10 @@ export default class SingleColorPalette extends Component{
      return shades.slice(1)
     }
     render () {
-        const colorBoxes = this.state.shades.map( color => <ColorBox key={color.name} name={color.name} background={color.hex}/>)
+        const colorBoxes = this.state.shades.map( color => <ColorBox key={color.name} name={color.name} background={color.hex} showLink={false}/>)
         return (
-            <div>
-                {colorBoxes}
+            <div className='palette'>
+            <div className='palette-colors'>{colorBoxes}</div>    
             </div>
      
         )
