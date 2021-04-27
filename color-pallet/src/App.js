@@ -21,7 +21,9 @@ class App extends Component {
       <Route exact path="/palette/:id" 
       render={ routerProps=> (<Palette 
       palette={generatePalette(this.findPalette(routerProps.match.params.id))} />)} />
-      <Route exact path="/palette/:paletteId/:colorId" render={()=> <SingleColorPalette/>} />
+      <Route exact path="/palette/:paletteId/:colorId" render={ routerProps=> (<SingleColorPalette 
+     colorId={routerProps.match.params.colorId}
+     palette={generatePalette(this.findPalette(routerProps.match.params.paletteId))} />)} />
     </Switch>
 
     //<div className="App">
