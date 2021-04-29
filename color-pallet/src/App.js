@@ -8,7 +8,6 @@ import { generatePalette } from "./colorHelpers";
 
 
 class App extends Component {
-
  findPalette (id){
    return seedsColors.find(function (palette){
      return palette.id === id
@@ -25,10 +24,6 @@ class App extends Component {
      colorId={routerProps.match.params.colorId}
      palette={generatePalette(this.findPalette(routerProps.match.params.paletteId))} />)} />
     </Switch>
-
-    //<div className="App">
-    //<Palette />
-    //</div>
   );
  }
 }
